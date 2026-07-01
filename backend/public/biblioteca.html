@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Biblioteca</title>
+
+<link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="titulo-pagina">
+        🎵 Biblioteca de Músicas
+    </h1>
+
+    <!-- IMPORTAÇÃO -->
+
+    <div class="card">
+
+        <h2>Importar Música</h2>
+
+        <input
+            type="file"
+            id="arquivoTxt"
+            accept=".txt">
+
+        <br><br>
+
+        <button
+            id="btnImportar"
+            class="btn-success">
+
+            Importar TXT
+        </button>
+
+    </div>
+
+    <!-- PESQUISA -->
+
+    <div class="card">
+
+        <h2>Pesquisar</h2>
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Digite título ou autor">
+
+    </div>
+
+    <!-- LISTA -->
+
+    <div class="card">
+
+        <h2>Músicas</h2>
+
+        <div
+            id="listaMusicas"
+            class="lista-musicas">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    id="modalMusica"
+    style="display:none;
+           position:fixed;
+           inset:0;
+           background:rgba(0,0,0,.85);
+           z-index:9999;
+           overflow:auto;">
+
+    <div
+        style="
+            max-width:1000px;
+            margin:40px auto;
+            background:#1d1d1d;
+            padding:20px;
+            border-radius:12px;">
+
+        <button
+            id="fecharModal"
+            class="btn-danger">
+
+            Fechar
+        </button>
+
+        <br><br>
+
+        <h2 id="modalTitulo"></h2>
+
+        <p id="modalAutor"></p>
+
+        <p id="modalTom"></p>
+
+        <hr>
+
+        <br>
+
+        <div
+            id="modalConteudo"
+            class="cifra-container">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/transpositor.js"></script>
+<script src="/js/biblioteca.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Painel do Líder</title>
+
+<link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="titulo-pagina">
+        🎤 Painel do Líder
+    </h1>
+
+    <div class="painel-lider">
+
+        <div class="sidebar">
+
+            <div class="card">
+
+                <h2>
+                    Repertório
+                </h2>
+
+                <select id="repertorioSelect">
+
+                    <option value="">
+                        Selecione...
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <button
+                    id="btnIniciar"
+                    class="btn-success">
+
+                    ▶ Iniciar Sessão
+                </button>
+
+                <button
+                    id="btnEncerrar"
+                    class="btn-danger">
+
+                    ⏹ Encerrar Sessão
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Navegação
+                </h2>
+
+                <button
+                    id="btnAnterior"
+                    class="btn-warning">
+
+                    ◀ Anterior
+                </button>
+
+                <button
+                    id="btnProxima"
+                    class="btn-primary">
+
+                    Próxima ▶
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Tom Atual
+                </h2>
+
+                <div class="controle-tom">
+
+                    <button id="diminuirTom">
+                        -
+                    </button>
+
+                    <div
+                        id="tomAtual"
+                        class="tom-atual">
+
+                        C
+                    </div>
+
+                    <button id="aumentarTom">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Sessão
+                </h2>
+
+                <div id="infoSessao">
+
+                    Nenhuma sessão ativa
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="preview">
+
+            <h2 id="tituloMusica">
+
+                Nenhuma música
+
+            </h2>
+
+            <br>
+
+            <div
+                id="previewCifra"
+                class="cifra-container">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/transpositor.js"></script>
+<script src="/js/lider.js"></script>
+
+</body>
+</html>

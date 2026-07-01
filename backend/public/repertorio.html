@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Repertórios</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="titulo-pagina">
+        🎼 Repertórios
+    </h1>
+
+    <!-- NOVO REPERTÓRIO -->
+
+    <div class="card">
+
+        <h2>
+            Novo Repertório
+        </h2>
+
+        <div class="form-row">
+
+            <input
+                type="text"
+                id="nomeRepertorio"
+                placeholder="Nome do repertório">
+
+            <button
+                id="btnNovo"
+                class="btn-success">
+
+                Criar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- LISTA DE REPERTÓRIOS -->
+
+    <div class="card">
+
+        <h2>
+            Repertórios Salvos
+        </h2>
+
+        <div
+            id="listaRepertorios">
+
+        </div>
+
+    </div>
+
+    <!-- EDITOR -->
+
+    <div
+        id="editorRepertorio"
+        style="display:none;">
+
+        <div class="card">
+
+            <div class="editor-header">
+
+                <h2
+                    id="tituloEditor">
+
+                </h2>
+
+                <div>
+
+                    <button
+                        id="btnSalvar"
+                        class="btn-success">
+
+                        Salvar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="editor-grid">
+
+                <!-- BIBLIOTECA -->
+
+                <div class="editor-col">
+
+                    <h3>
+                        Biblioteca
+                    </h3>
+
+                    <select
+                        id="musicaSelect"
+                        class="full-width">
+
+                    </select>
+
+                    <br><br>
+
+                    <button
+                        id="btnAdicionar"
+                        class="btn-primary">
+
+                        Adicionar ao Repertório
+
+                    </button>
+
+                </div>
+
+                <!-- REPERTÓRIO -->
+
+                <div class="editor-col">
+
+                    <h3>
+                        Músicas do Repertório
+                    </h3>
+
+                    <div
+                        id="listaMusicasRepertorio">
+
+                    </div>
+
+                    <hr>
+
+                    <div
+                        class="duracao-total">
+
+                        ⏱ Duração Total:
+
+                        <strong
+                            id="duracaoTotal">
+
+                            0
+
+                        </strong>
+
+                        min
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL VISUALIZAÇÃO -->
+
+<div
+    id="modalMusica"
+    class="modal"
+    style="display:none;">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2
+                id="modalTitulo">
+
+            </h2>
+
+            <button
+                id="fecharModal"
+                class="btn-danger">
+
+                Fechar
+
+            </button>
+
+        </div>
+
+        <p
+            id="modalAutor">
+
+        </p>
+
+        <p
+            id="modalTom">
+
+        </p>
+
+        <hr>
+
+        <div
+            id="modalConteudo"
+            class="cifra-container">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/transpositor.js"></script>
+<script src="/js/repertorio.js"></script>
+
+</body>
+</html>

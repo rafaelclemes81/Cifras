@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Músico</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+<body>
+
+<!-- CONTROLES -->
+
+<div
+    id="barraControles"
+    class="barra-controles">
+
+    <button id="btnTelaCheia">
+        ⛶ Tela Cheia
+    </button>
+
+    <button id="btnModoPalco">
+        🎤 Modo Palco
+    </button>
+
+    <button id="btnToggleControles">
+        ☰ Ocultar
+    </button>
+
+    <div class="controle">
+
+        <label>
+            Fonte
+        </label>
+
+        <input
+            type="range"
+            id="fonteRange"
+            min="12"
+            max="40"
+            value="16">
+
+    </div>
+
+    <div class="controle">
+
+        <label>
+            Scroll
+        </label>
+
+        <input
+            type="range"
+            id="scrollRange"
+            min="0"
+            max="10"
+            value="0">
+
+    </div>
+
+</div>
+
+<button
+    id="btnMobileMenu"
+    class="btn-mobile-menu">
+    ⚙
+</button>
+
+<!-- ÁREA PRINCIPAL -->
+
+<div class="musico-view">
+
+    <div class="info-musica">
+
+        <div
+            id="nomeMusica"
+            class="nome-musica">
+
+            Aguardando sessão...
+        </div>
+
+        <div
+            id="tomMusica"
+            class="tom-musica">
+
+            -
+        </div>
+
+    </div>
+
+    <div
+        id="conteudoMusica"
+        class="cifra-container">
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/transpositor.js"></script>
+<script src="/js/musico.js"></script>
+
+</body>
+
+</html>
