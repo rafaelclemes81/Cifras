@@ -318,6 +318,65 @@ socket.on(
     }
 );
 
+socket.on(
+
+    "scroll-play",
+
+    dados => {
+
+        config.scroll =
+            dados.velocidade;
+
+        atualizarScroll();
+    }
+);
+
+socket.on(
+
+    "scroll-pause",
+
+    () => {
+
+        if (
+            scrollTimer
+        ) {
+
+            clearInterval(
+                scrollTimer
+            );
+
+            scrollTimer = null;
+        }
+    }
+);
+
+socket.on(
+
+    "scroll-stop",
+
+    () => {
+
+        if (
+            scrollTimer
+        ) {
+
+            clearInterval(
+                scrollTimer
+            );
+
+            scrollTimer = null;
+        }
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior:
+                "smooth"
+        });
+    }
+);
+
 /* ==========================================
    CARGA INICIAL
 ========================================== */

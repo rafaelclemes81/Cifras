@@ -183,6 +183,14 @@ function removerTabelaAcordes(texto) {
     );
 }
 
+/*const nomeArquivo =
+    Buffer
+        .from(
+            req.file.originalname,
+            "latin1"
+        )
+        .toString("utf8");*/
+
 function extrairTituloAutor(nomeArquivo) {
 
     const base =
@@ -395,16 +403,29 @@ app.get(
 ===================================================== */
 
 app.post(
-
     "/api/musicas/importar",
-
-    upload.single(
-        "arquivo"
-    ),
-
+    upload.single("arquivo"),
     (req, res) => {
 
         try {
+
+            console.log(
+                "ORIGINALNAME:",
+                req.file.originalname
+            );
+
+            const nomeArquivo =
+                Buffer
+                    .from(
+                        req.file.originalname,
+                        "latin1"
+                    )
+                    .toString("utf8");
+
+            console.log(
+                "CONVERTIDO:",
+                nomeArquivo
+            );
 
             const buffer =
                 fs.readFileSync(
@@ -431,13 +452,9 @@ app.post(
             }
 
             if (
-
                 textoOriginal.includes("Ã")
-
                 ||
-
                 textoOriginal.includes("�")
-
             ) {
 
                 textoOriginal =
@@ -454,9 +471,18 @@ app.post(
 
             const dadosArquivo =
                 extrairTituloAutor(
-
-                    req.file.originalname
+                    nomeArquivo
                 );
+
+            console.log(
+                "TÍTULO EXTRAÍDO:",
+                dadosArquivo.titulo
+            );
+
+            console.log(
+                "AUTOR EXTRAÍDO:",
+                dadosArquivo.autor
+            );
 
             const titulo =
                 dadosArquivo.titulo;
@@ -495,7 +521,8 @@ app.post(
 
                 ultimoTom: tomOriginal,
 
-                conteudo: texto.trim(),
+                conteudo:
+                    texto.trim(),
 
                 criadoEm:
                     new Date()
@@ -1445,6 +1472,37 @@ io.on(
                 io.emit(
                     "sessaoAtualizada",
                     sessaoAtual
+                );
+            }
+        );
+
+        socket.on(
+            "scroll-play",
+            dados => {
+
+                io.emit(
+                    "scroll-play",
+                    dados
+                );
+            }
+        );
+
+        socket.on(
+            "scroll-pause",
+            () => {
+
+                io.emit(
+                    "scroll-pause"
+                );
+            }
+        );
+
+        socket.on(
+            "scroll-stop",
+            () => {
+
+                io.emit(
+                    "scroll-stop"
                 );
             }
         );

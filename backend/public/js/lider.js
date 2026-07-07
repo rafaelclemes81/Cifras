@@ -1,5 +1,25 @@
 const socket = io();
 
+const btnScrollPlay =
+    document.getElementById(
+        "btnScrollPlay"
+    );
+
+const btnScrollPause =
+    document.getElementById(
+        "btnScrollPause"
+    );
+
+const btnScrollStop =
+    document.getElementById(
+        "btnScrollStop"
+    );
+
+const scrollRange =
+    document.getElementById(
+        "scrollRange"
+    );
+
 let sessaoAtual = null;
 
 const repertorioSelect =
@@ -354,6 +374,51 @@ socket.on(
         atualizarTela({
             ativa:false
         });
+    }
+);
+
+btnScrollPlay.addEventListener(
+
+    "click",
+
+    () => {
+
+        socket.emit(
+
+            "scroll-play",
+
+            {
+                velocidade:
+
+                    Number(
+                        scrollRange.value
+                    )
+            }
+        );
+    }
+);
+
+btnScrollPause.addEventListener(
+
+    "click",
+
+    () => {
+
+        socket.emit(
+            "scroll-pause"
+        );
+    }
+);
+
+btnScrollStop.addEventListener(
+
+    "click",
+
+    () => {
+
+        socket.emit(
+            "scroll-stop"
+        );
     }
 );
 
