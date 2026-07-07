@@ -274,6 +274,14 @@ select{
     overflow:auto;
 }
 
+.cifra-container {
+
+    overflow-y: auto;
+
+    height: 80vh;
+
+}
+
 /* =====================================================
    CONTROLE DE TOM
 ===================================================== */
@@ -305,17 +313,6 @@ select{
 /* =====================================================
    MODO CIFRA CLUB
 ===================================================== */
-
-/* .cifra-container{
-
-    font-size:28px;
-
-    line-height:2.2;
-
-    white-space:pre-wrap;
-
-    user-select:text;
-} */
 
 #conteudoMusica{
 

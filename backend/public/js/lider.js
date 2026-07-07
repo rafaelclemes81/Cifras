@@ -1,9 +1,11 @@
+let scrollTimerLider = null;
+
 const socket = io();
 
-const btnScrollPlay =
+/*const btnScrollPlay =
     document.getElementById(
         "btnScrollPlay"
-    );
+    );*/
 
 const btnScrollPause =
     document.getElementById(
@@ -37,6 +39,21 @@ const previewCifra =
         "previewCifra"
     );
 
+const btnScrollPlay =
+    document.getElementById(
+        "btnScrollPlay"
+    );
+
+/*const btnScrollPause =
+    document.getElementById(
+        "btnScrollPause"
+    );*/
+
+/*const btnScrollStop =
+    document.getElementById(
+        "btnScrollStop"
+    );*/
+
 const tomAtual =
     document.getElementById(
         "tomAtual"
@@ -68,6 +85,9 @@ const NOTAS = [
 
 async function carregarRepertorios() {
 
+    console.log("Carregando repertórios...");
+  
+
     const response =
         await fetch(
             "/api/repertorios"
@@ -75,6 +95,11 @@ async function carregarRepertorios() {
 
     const repertorios =
         await response.json();
+
+    console.log(repertorios);
+
+    /*const repertorios =
+        await response.json();*/
 
     repertorioSelect.innerHTML =
         '<option value="">Selecione...</option>';
@@ -383,16 +408,22 @@ btnScrollPlay.addEventListener(
 
     () => {
 
+        const velocidade =
+
+            Number(
+                scrollRange.value
+            );
+
+        iniciarScrollLider(
+            velocidade
+        );
+
         socket.emit(
 
             "scroll-play",
 
             {
-                velocidade:
-
-                    Number(
-                        scrollRange.value
-                    )
+                velocidade
             }
         );
     }
@@ -403,6 +434,8 @@ btnScrollPause.addEventListener(
     "click",
 
     () => {
+
+        pausarScrollLider();
 
         socket.emit(
             "scroll-pause"
@@ -416,11 +449,64 @@ btnScrollStop.addEventListener(
 
     () => {
 
+        pararScrollLider();
+
         socket.emit(
             "scroll-stop"
         );
     }
 );
+
+function iniciarScrollLider(
+    velocidade
+) {
+
+    pararScrollLider();
+
+    scrollTimerLider =
+
+        setInterval(
+
+            () => {
+
+                previewCifra.scrollTop +=
+                    velocidade;
+
+            },
+
+            50
+        );
+}
+
+function pausarScrollLider() {
+
+    if (
+        scrollTimerLider
+    ) {
+
+        clearInterval(
+            scrollTimerLider
+        );
+
+        scrollTimerLider = null;
+    }
+}
+
+function pararScrollLider() {
+
+    if (
+        scrollTimerLider
+    ) {
+
+        clearInterval(
+            scrollTimerLider
+        );
+
+        scrollTimerLider = null;
+    }
+
+    previewCifra.scrollTop = 0;
+}
 
 /* ===========================
    INIT
