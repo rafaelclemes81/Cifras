@@ -1487,6 +1487,22 @@ io.on(
             }
         );
 
+        /*socket.on(
+        "scroll-play",
+            dados => {
+
+                console.log(
+                    "SCROLL PLAY",
+                    dados
+                );
+
+                io.emit(
+                    "scroll-play",
+                    dados
+                );
+            }
+        );*/
+
         socket.on(
             "scroll-pause",
             () => {
