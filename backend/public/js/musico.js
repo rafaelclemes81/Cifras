@@ -170,6 +170,25 @@ function aplicarConfig() {
    RENDER
 ========================================== */
 
+function pararScroll() {
+
+    if (scrollTimer) {
+
+        clearInterval(
+            scrollTimer
+        );
+
+        scrollTimer = null;
+    }
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "auto"
+    });
+}
+
 function renderizarSessao(sessao) {
 
     if (
@@ -185,6 +204,13 @@ function renderizarSessao(sessao) {
 
         conteudoMusica.innerHTML =
             "";
+        pararScroll();
+
+        config.scroll = 0;
+
+        scrollRange.value = 0;
+
+        salvarConfig();
 
         return;
     }
@@ -315,65 +341,23 @@ socket.on(
         renderizarSessao(
             sessao
         );
-    }
-);
 
-socket.on(
-
-    "scroll-play",
-
-    dados => {
-
-        config.scroll =
-            dados.velocidade;
-
-        atualizarScroll();
-    }
-);
-
-socket.on(
-
-    "scroll-pause",
-
-    () => {
-
-        if (
-            scrollTimer
-        ) {
-
-            clearInterval(
-                scrollTimer
+        nomeMusica.classList.add(
+                "mudou-musica"
             );
 
-            scrollTimer = null;
-        }
-    }
-);
+            setTimeout(
 
-socket.on(
+                () => {
 
-    "scroll-stop",
+                    nomeMusica.classList.remove(
+                        "mudou-musica"
+                    );
 
-    () => {
+                },
 
-        if (
-            scrollTimer
-        ) {
-
-            clearInterval(
-                scrollTimer
+                1000
             );
-
-            scrollTimer = null;
-        }
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior:
-                "smooth"
-        });
     }
 );
 

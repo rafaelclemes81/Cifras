@@ -1,5 +1,10 @@
 let scrollTimerLider = null;
 
+const preview =
+    document.getElementById(
+        "previewCifra"
+    );
+
 const btnTelaCheia =
     document.getElementById(
         "btnTelaCheia"
@@ -106,6 +111,11 @@ async function carregarRepertorios() {
     /*const repertorios =
         await response.json();*/
 
+    console.log(
+        "TIPO:",
+        typeof repertorioSelect
+    );
+
     repertorioSelect.innerHTML =
         '<option value="">Selecione...</option>';
 
@@ -143,6 +153,8 @@ async function carregarSessao() {
 =========================== */
 
 function atualizarTela(sessao) {
+
+    pararScrollLider();
 
     sessaoAtual = sessao;
 
@@ -315,15 +327,12 @@ scrollRange.addEventListener(
 
     () => {
 
-        valorScroll.textContent =
-
+        document.getElementById(
+            "valorScroll"
+        ).textContent =
             scrollRange.value;
     }
 );
-
-/* ===========================
-   ALTERAR TOM
-=========================== */
 
 function alterarTom(
     direcao
@@ -437,15 +446,7 @@ btnScrollPlay.addEventListener(
         iniciarScrollLider(
             velocidade
         );
-
-        socket.emit(
-
-            "scroll-play",
-
-            {
-                velocidade
-            }
-        );
+        
     }
 );
 
@@ -459,10 +460,7 @@ btnScrollPause.addEventListener(
             "🟡 Pausado";
 
         pausarScrollLider();
-
-        socket.emit(
-            "scroll-pause"
-        );
+        
     }
 );
 
@@ -476,10 +474,7 @@ btnScrollStop.addEventListener(
             "🔴 Parado";
 
         pararScrollLider();
-
-        socket.emit(
-            "scroll-stop"
-        );
+        
     }
 );
 

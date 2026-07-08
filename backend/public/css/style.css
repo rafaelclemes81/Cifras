@@ -277,7 +277,7 @@ select{
 
     gap: 10px;
 
-    width: 280px;
+    width: 200px;
 
     flex-shrink: 0;
 
@@ -337,7 +337,7 @@ html {
 
     justify-content:center;
 
-    gap:20px;
+    gap:8px;
 
     margin-top:15px;
 }
@@ -348,7 +348,7 @@ html {
 
     font-weight: bold;
 
-    min-width: 40px;
+    min-width: 30px;
 
     text-align: center;
 }
@@ -1141,7 +1141,28 @@ body.modo-palco #previewCifra {
 
     text-align: center;
 
-    margin-top: 8px;
+    margin-top: 10px;
 
     font-size: 0.9rem;
+
+    font-weight: bold;
+}
+
+.mudou-musica {
+
+    animation:
+        destaqueMusica 1s;
+}
+
+@keyframes destaqueMusica {
+
+    0% {
+
+        transform: scale(1.15);
+    }
+
+    100% {
+
+        transform: scale(1);
+    }
 }

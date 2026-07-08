@@ -1475,63 +1475,16 @@ io.on(
                 );
             }
         );
+     
+                 socket.on(
+                    "disconnect",
+                    () => {
 
-        socket.on(
-            "scroll-play",
-            dados => {
-
-                io.emit(
-                    "scroll-play",
-                    dados
-                );
-            }
-        );
-
-        /*socket.on(
-        "scroll-play",
-            dados => {
-
-                console.log(
-                    "SCROLL PLAY",
-                    dados
-                );
-
-                io.emit(
-                    "scroll-play",
-                    dados
-                );
-            }
-        );*/
-
-        socket.on(
-            "scroll-pause",
-            () => {
-
-                io.emit(
-                    "scroll-pause"
-                );
-            }
-        );
-
-        socket.on(
-            "scroll-stop",
-            () => {
-
-                io.emit(
-                    "scroll-stop"
-                );
-            }
-        );
-
-        socket.on(
-            "disconnect",
-            () => {
-
-                console.log(
-                    "Cliente desconectado"
-                );
-            }
-        );
+                        console.log(
+                            "Cliente desconectado"
+                        );
+                    }
+                );         
     }
 );
 
