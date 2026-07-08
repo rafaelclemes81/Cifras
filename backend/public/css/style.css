@@ -1084,3 +1084,64 @@ body.modo-palco #previewCifra {
     gap: 6px;
 }
 
+.controles-scroll {
+
+    display: flex;
+
+    gap: 6px;
+
+    margin-top: 10px;
+}
+
+.controles-scroll button {
+
+    flex: 1;
+
+    padding: 8px;
+
+    font-size: 1rem;
+}
+
+.controle-tom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 8px;
+}
+
+.controle-tom button {
+
+    width: 36px;
+
+    height: 36px;
+
+    padding: 0;
+
+    font-size: 16px;
+}
+
+.tom-atual {
+
+    min-width: 40px;
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+#statusScroll {
+
+    text-align: center;
+
+    margin-top: 8px;
+
+    font-size: 0.9rem;
+}

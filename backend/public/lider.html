@@ -87,7 +87,7 @@
 
             </div>
 
-            <div class="card card-tom">
+            <!--<div class="card card-tom">
 
                 <h2>
                     Tom Atual
@@ -112,56 +112,94 @@
 
                 </div>
 
-            </div>
+            </div>-->
 
             <div class="card">
 
-                    <h2>
-                        Scroll Global
-                    </h2>
+                <h2>
+                    Controle
+                </h2>
 
-                    <label>
+                <label>
 
-                        Velocidade:
+                    Tom Atual
 
-                        <span id="valorScroll">
-                            3
-                        </span>
+                </label>
 
-                    </label>
+                <div class="controle-tom">
 
-                    <input
-                        type="range"
-                        id="scrollRange"
-                        min="1"
-                        max="10"
-                        value="3">
-
-                    <br><br>
-
-                    <div class="controles-scroll">
-
-                        <button id="btnScrollPlay">
-                            ▶ Iniciar
-                        </button>
-
-                        <button id="btnScrollPause">
-                            ⏸ Pausar
-                        </button>
-
-                        <button id="btnScrollStop">
-                            ⏹ Parar
-                        </button>
-
-                    </div>
+                    <button id="diminuirTom">
+                        -
+                    </button>
 
                     <div
-                        id="statusScroll"
-                        class="status-scroll">
+                        id="tomAtual"
+                        class="tom-atual">
 
-                        🔴 Parado
+                        C
 
                     </div>
+
+                    <button id="aumentarTom">
+                        +
+                    </button>
+
+                </div>
+
+                <br>
+
+                <label>
+
+                    Velocidade:
+                    <span id="valorScroll">
+                        3
+                    </span>
+
+                </label>
+
+                <input
+                    type="range"
+                    id="scrollRange"
+                    min="1"
+                    max="10"
+                    value="3">
+
+                <br><br>
+
+                <div class="controles-scroll">
+
+                    <button
+                        id="btnScrollPlay"
+                        class="btn-success">
+
+                        ▶
+
+                    </button>
+
+                    <button
+                        id="btnScrollPause"
+                        class="btn-warning">
+
+                        ⏸
+
+                    </button>
+
+                    <button
+                        id="btnScrollStop"
+                        class="btn-danger">
+
+                        ⏹
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="statusScroll">
+
+                    🔴 Parado
+
+                </div>
 
             </div>
 
