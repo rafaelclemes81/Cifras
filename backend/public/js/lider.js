@@ -1,11 +1,26 @@
 let scrollTimerLider = null;
 
-const socket = io();
-
-/*const btnScrollPlay =
+const btnTelaCheia =
     document.getElementById(
-        "btnScrollPlay"
-    );*/
+        "btnTelaCheia"
+    );
+
+const btnModoPalco =
+    document.getElementById(
+        "btnModoPalco"
+    );
+
+const valorScroll =
+    document.getElementById(
+        "valorScroll"
+    );
+
+const statusScroll =
+    document.getElementById(
+        "statusScroll"
+    );
+
+const socket = io();
 
 const btnScrollPause =
     document.getElementById(
@@ -43,16 +58,6 @@ const btnScrollPlay =
     document.getElementById(
         "btnScrollPlay"
     );
-
-/*const btnScrollPause =
-    document.getElementById(
-        "btnScrollPause"
-    );*/
-
-/*const btnScrollStop =
-    document.getElementById(
-        "btnScrollStop"
-    );*/
 
 const tomAtual =
     document.getElementById(
@@ -304,6 +309,18 @@ document
     }
 );
 
+scrollRange.addEventListener(
+
+    "input",
+
+    () => {
+
+        valorScroll.textContent =
+
+            scrollRange.value;
+    }
+);
+
 /* ===========================
    ALTERAR TOM
 =========================== */
@@ -414,6 +431,9 @@ btnScrollPlay.addEventListener(
                 scrollRange.value
             );
 
+        statusScroll.textContent =
+            "🟢 Rodando";
+
         iniciarScrollLider(
             velocidade
         );
@@ -435,6 +455,9 @@ btnScrollPause.addEventListener(
 
     () => {
 
+        statusScroll.textContent =
+            "🟡 Pausado";
+
         pausarScrollLider();
 
         socket.emit(
@@ -448,6 +471,9 @@ btnScrollStop.addEventListener(
     "click",
 
     () => {
+
+        statusScroll.textContent =
+            "🔴 Parado";
 
         pararScrollLider();
 
@@ -463,13 +489,18 @@ function iniciarScrollLider(
 
     pararScrollLider();
 
+    const preview =
+        document.getElementById(
+            "previewCifra"
+        );
+
     scrollTimerLider =
 
         setInterval(
 
             () => {
 
-                previewCifra.scrollTop +=
+                preview.scrollTop +=
                     velocidade;
 
             },
@@ -505,8 +536,51 @@ function pararScrollLider() {
         scrollTimerLider = null;
     }
 
-    previewCifra.scrollTop = 0;
+    const preview =
+        document.getElementById(
+            "previewCifra"
+        );
+
+    preview.scrollTop = 0;
 }
+
+btnTelaCheia.addEventListener(
+
+    "click",
+
+    async () => {
+
+        if (
+
+            !document.fullscreenElement
+
+        ) {
+
+            await document
+                .documentElement
+                .requestFullscreen();
+
+        } else {
+
+            await document
+                .exitFullscreen();
+        }
+    }
+);
+
+btnModoPalco.addEventListener(
+
+    "click",
+
+    () => {
+
+        document.body
+            .classList
+            .toggle(
+                "modo-palco"
+            );
+    }
+);
 
 /* ===========================
    INIT

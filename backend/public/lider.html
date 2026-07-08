@@ -45,19 +45,25 @@
 
                 <br><br>
 
-                <button
-                    id="btnIniciar"
-                    class="btn-success">
+                <div class="grupo-botoes">
 
-                    ▶ Iniciar Sessão
-                </button>
+                    <button
+                        id="btnIniciar"
+                        class="btn-success">
 
-                <button
-                    id="btnEncerrar"
-                    class="btn-danger">
+                        ▶ Iniciar
 
-                    ⏹ Encerrar Sessão
-                </button>
+                    </button>
+
+                    <button
+                        id="btnEncerrar"
+                        class="btn-danger">
+
+                        ⏹ Encerrar
+
+                    </button>
+
+                </div>
 
             </div>
 
@@ -67,23 +73,21 @@
                     Navegação
                 </h2>
 
-                <button
-                    id="btnAnterior"
-                    class="btn-warning">
+                <div class="navegacao-botoes">
 
-                    ◀ Anterior
-                </button>
+                    <button id="btnAnterior">
+                        ◀ Anterior
+                    </button>
 
-                <button
-                    id="btnProxima"
-                    class="btn-primary">
+                    <button id="btnProxima">
+                        Próxima ▶
+                    </button>
 
-                    Próxima ▶
-                </button>
+                </div>
 
             </div>
 
-            <div class="card">
+            <div class="card card-tom">
 
                 <h2>
                     Tom Atual
@@ -117,7 +121,13 @@
                     </h2>
 
                     <label>
-                        Velocidade
+
+                        Velocidade:
+
+                        <span id="valorScroll">
+                            3
+                        </span>
+
                     </label>
 
                     <input
@@ -129,25 +139,52 @@
 
                     <br><br>
 
-                    <button
-                        id="btnScrollPlay"
-                        class="btn-success">
+                    <div class="controles-scroll">
 
-                        ▶ Iniciar
-                    </button>
+                        <button id="btnScrollPlay">
+                            ▶ Iniciar
+                        </button>
 
-                    <button
-                        id="btnScrollPause"
-                        class="btn-warning">
+                        <button id="btnScrollPause">
+                            ⏸ Pausar
+                        </button>
 
-                        ⏸ Pausar
-                    </button>
+                        <button id="btnScrollStop">
+                            ⏹ Parar
+                        </button>
 
-                    <button
-                        id="btnScrollStop"
-                        class="btn-danger">
+                    </div>
 
-                        ⏹ Parar
+                    <div
+                        id="statusScroll"
+                        class="status-scroll">
+
+                        🔴 Parado
+
+                    </div>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Visualização
+                </h2>
+
+                <button
+                    id="btnTelaCheia">
+
+                    ⛶ Tela Cheia
+
+                </button>
+
+                <br><br>
+
+                <button
+                    id="btnModoPalco">
+
+                    🎤 Modo Palco
+
                 </button>
 
             </div>
