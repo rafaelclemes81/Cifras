@@ -140,14 +140,14 @@ function renderizarLista() {
                     class="btn-primary"
                     onclick="visualizarMusica('${musica.id}')">
 
-                    Visualizar
+                    👁️
                 </button>
 
                 <button
                     class="btn-danger"
                     onclick="excluirMusica('${musica.id}')">
 
-                    Excluir
+                    🗑️
                 </button>
 
             </div>

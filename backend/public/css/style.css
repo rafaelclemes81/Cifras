@@ -62,6 +62,8 @@ button{
     font-weight:bold;
 
     transition:0.2s;
+
+    white-space: nowrap;
 }
 
 button:hover{
@@ -73,6 +75,10 @@ button:hover{
 
     background:#2196f3;
     color:white;
+    white-space: nowrap;
+    height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
 }
 
 .btn-success{
@@ -80,6 +86,7 @@ button:hover{
     background:#4caf50;
     color:white;
     width: 100%;
+    
 }
 
 .btn-warning{
@@ -87,6 +94,10 @@ button:hover{
     background:#ff9800;
     color:white;
     width: 100%;
+    white-space: nowrap;
+    height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
 }
 
 .btn-danger{
@@ -94,6 +105,10 @@ button:hover{
     background:#f44336;
     color:white;
     width: 100%;
+    white-space: nowrap;
+    height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
 }
 
 /* =====================================================
@@ -1165,4 +1180,116 @@ body.modo-palco #previewCifra {
 
         transform: scale(1);
     }
+}
+
+/*#btnSalvar,
+.btn-salvar {
+
+    width: auto;
+
+    min-width: 120px;
+
+    padding: 0 20px;
+
+    height: 36px;
+
+    display: inline-block;
+}*/
+
+/* ==========================
+   REPERTÓRIOS
+========================== */
+
+/* Salvar não ocupa a linha inteira */
+#btnSalvar {
+
+    width: auto !important;
+
+    min-width: 120px;
+
+    padding: 0 20px;
+
+    height: 38px;
+}
+
+/* Criar */
+#btnNovo {
+
+    width: auto !important;
+
+    min-width: 120px;
+
+    padding: 0 20px;
+
+    height: 38px;
+}
+
+/* Adicionar ao repertório */
+#btnAdicionar {
+
+    width: auto !important;
+
+    min-width: 180px;
+
+    padding: 0 20px;
+
+    height: 38px;
+}
+
+.btn-primary,
+.btn-warning,
+.btn-danger {
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+/* Botões da lista de repertórios */
+
+.repertorio-item button {
+
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    padding: 0;
+
+    margin-left: 6px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    border-radius: 8px;
+}
+
+.repertorio-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.repertorio-item > div:last-child {
+
+    display: flex;
+
+    gap: 6px;
 }

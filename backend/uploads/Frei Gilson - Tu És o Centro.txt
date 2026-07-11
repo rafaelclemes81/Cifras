@@ -2,7 +2,6 @@ Frei Gilson - Tu És o Centro
 
 [Intro] G  Em7  C  G  D
 
-
 [Primeira Parte]
 
              G               Em7
@@ -132,7 +131,7 @@ Não vou mais ti____rar
 Os meus o_lhos de Ti
        C  D/C  Em7        D4  D
 Vou me a__paixo_nar, outra vez
- 
+
              C  D/C   G
 Que o meu viver Se____nhor
       C     D/C  G
@@ -201,3 +200,15 @@ Da minha vida
 
 [Final] Em7  C  G  D
         G  Em7  C  G  D  G
+
+----------------- Acordes -----------------
+Bm = X 2 4 4 3 2
+C = X 3 2 0 1 0
+C7M = X 3 2 0 0 X
+D = X X 0 2 3 2
+D/C = X 3 X 2 3 2
+D4 = X X 0 2 3 3
+Em7 = 0 2 2 0 3 0
+G = 3 2 0 0 0 3
+G4 = 3 5 5 5 3 3
+Am = X 0 2 2 1 0

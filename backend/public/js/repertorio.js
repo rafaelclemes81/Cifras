@@ -103,26 +103,26 @@ function renderizarRepertorios() {
 
                 <button
                     class="btn-primary"
+                    title="Editar"
                     onclick="editarRepertorio('${r.id}')">
 
-                    Editar
-
+                    ✏️
                 </button>
 
                 <button
                     class="btn-warning"
+                    title="Duplicar"
                     onclick="duplicarRepertorio('${r.id}')">
 
-                    Duplicar
-
+                    📄
                 </button>
 
                 <button
                     class="btn-danger"
+                    title="Excluir"
                     onclick="excluirRepertorio('${r.id}')">
 
-                    Excluir
-
+                    🗑️
                 </button>
 
             </div>
