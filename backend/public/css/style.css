@@ -380,6 +380,8 @@ html {
 
     white-space:pre;
 
+    width: 100%;
+
     -webkit-overflow-scrolling:touch;
 }
 
@@ -397,21 +399,21 @@ html {
 
 .cifra-club {
 
-    font-family:
-        "Courier New",
-        monospace;
+    width: 100%;
 
-    white-space: pre;
+    box-sizing: border-box;
 
-    line-height: 1.15;
+    white-space: pre-wrap;
 
-    margin: 0;
+    overflow-wrap: break-word;
 
-    padding: 10px;
+    font-size: clamp(
+        14px,
+        2vw,
+        22px
+    );
 
-    font-size: 22px;
-
-    min-width: max-content;
+    line-height: 1.4;
 }
 
 /* =====================================================
@@ -804,6 +806,8 @@ html {
     overflow-y:auto;
 
     width:100%;
+
+    max-width: none;
 }
 /* =====================================================
    HOME
@@ -1293,3 +1297,38 @@ body.modo-palco #previewCifra {
 
     gap: 6px;
 }
+
+.btn-flutuante {
+
+    position: fixed;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.sidebar-oculta {
+
+    display: none;
+}
+

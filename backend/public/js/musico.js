@@ -57,11 +57,6 @@ const barraControles =
         "barraControles"
     );
 
-const fonteRange =
-    document.getElementById(
-        "fonteRange"
-    );
-
 const scrollRange =
     document.getElementById(
         "scrollRange"
@@ -77,8 +72,6 @@ const CONFIG_KEY =
 let scrollTimer = null;
 
 let config = {
-
-    fonte: 16,
 
     scroll: 0,
 
@@ -128,23 +121,9 @@ function carregarConfig() {
 
 function aplicarConfig() {
 
-    fonteRange.value =
-        config.fonte;
-
     scrollRange.value =
         config.scroll;
 
-         const cifra =
-
-                document.querySelector(
-                    ".cifra-club"
-                );
-
-            if (cifra) {
-
-                cifra.style.fontSize =
-                    `${config.fonte}px`;
-            }
 
     if (
         config.modoPalco
@@ -316,7 +295,7 @@ function renderizarSessao(sessao) {
        DA FONTE
     */
 
-    const cifra =
+    /* const cifra =
 
         document.querySelector(
             ".cifra-club"
@@ -326,7 +305,7 @@ function renderizarSessao(sessao) {
 
         cifra.style.fontSize =
             `${config.fonte}px`;
-    }
+    } */
 }
 
 /* ==========================================
@@ -465,7 +444,7 @@ btnToggleControles
    FONTE
 ========================================== */
 
-fonteRange.addEventListener(
+/* fonteRange.addEventListener(
 
     "input",
 
@@ -483,7 +462,7 @@ fonteRange.addEventListener(
 
         salvarConfig();
     }
-);
+);*/
 
 /* ==========================================
    AUTO SCROLL

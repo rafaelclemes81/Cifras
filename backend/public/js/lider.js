@@ -42,6 +42,16 @@ const scrollRange =
         "scrollRange"
     );
 
+const sidebar =
+    document.querySelector(
+        ".sidebar"
+    );
+
+const btnMostrarControles =
+    document.getElementById(
+        "btnMostrarControles"
+    );
+
 let sessaoAtual = null;
 
 const repertorioSelect =
@@ -199,6 +209,28 @@ function atualizarTela(sessao) {
         );
 }
 
+function ocultarControles() {
+
+    sidebar.classList.add(
+        "sidebar-oculta"
+    );
+
+    btnMostrarControles
+        .style.display =
+        "flex";
+}
+
+function mostrarControles() {
+
+    sidebar.classList.remove(
+        "sidebar-oculta"
+    );
+
+    btnMostrarControles
+        .style.display =
+        "none";
+}
+
 /* ===========================
    INICIAR
 =========================== */
@@ -275,9 +307,15 @@ document
     }
 );
 
-/* ===========================
-   PRÓXIMA
-=========================== */
+btnMostrarControles
+    .addEventListener(
+
+        "click",
+
+        mostrarControles
+    );
+
+
 
 document
 .getElementById(
@@ -484,6 +522,8 @@ function iniciarScrollLider(
 
     pararScrollLider();
 
+    ocultarControles();
+
     const preview =
         document.getElementById(
             "previewCifra"
@@ -516,6 +556,7 @@ function pausarScrollLider() {
 
         scrollTimerLider = null;
     }
+
 }
 
 function pararScrollLider() {
@@ -537,6 +578,7 @@ function pararScrollLider() {
         );
 
     preview.scrollTop = 0;
+
 }
 
 btnTelaCheia.addEventListener(
