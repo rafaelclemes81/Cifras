@@ -275,15 +275,6 @@ select{
     align-items: flex-start;
 }
 
-/* .sidebar{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-} */
-
 .sidebar {
 
     display: flex;
@@ -1332,3 +1323,7 @@ body.modo-palco #previewCifra {
     display: none;
 }
 
+.sidebar-oculta {
+
+    display: none;
+}

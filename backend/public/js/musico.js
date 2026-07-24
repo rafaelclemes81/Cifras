@@ -1,3 +1,18 @@
+const sidebar =
+    document.getElementById(
+        "sidebarMusico"
+    );
+
+const btnToggleControles =
+    document.getElementById(
+        "btnToggleControles"
+    );
+
+const btnMobileMenu =
+    document.getElementById(
+        "btnMobileMenu"
+    );
+
 const socket = io();
 
 window.onerror = function (
@@ -37,20 +52,6 @@ const conteudoMusica =
         "conteudoMusica"
     );
 
-const btnTelaCheia =
-    document.getElementById(
-        "btnTelaCheia"
-    );
-
-const btnModoPalco =
-    document.getElementById(
-        "btnModoPalco"
-    );
-
-const btnToggleControles =
-    document.getElementById(
-        "btnToggleControles"
-    );
 
 const barraControles =
     document.getElementById(
@@ -368,53 +369,6 @@ async function carregarSessaoAtual() {
     }
 }
 
-/* ==========================================
-   TELA CHEIA
-========================================== */
-
-btnTelaCheia.addEventListener(
-    "click",
-
-    async () => {
-
-        if (
-            !document.fullscreenElement
-        ) {
-
-            await document
-                .documentElement
-                .requestFullscreen();
-
-        } else {
-
-            await document
-                .exitFullscreen();
-        }
-    }
-);
-
-/* ==========================================
-   MODO PALCO
-========================================== */
-
-btnModoPalco.addEventListener(
-    "click",
-
-    () => {
-
-        config.modoPalco =
-            !config.modoPalco;
-
-        salvarConfig();
-
-        aplicarConfig();
-    }
-);
-
-/* ==========================================
-   OCULTAR CONTROLES
-========================================== */
-
 btnToggleControles
 .addEventListener(
 
@@ -439,35 +393,6 @@ btnToggleControles
             : "☰ Ocultar";
     }
 );
-
-/* ==========================================
-   FONTE
-========================================== */
-
-/* fonteRange.addEventListener(
-
-    "input",
-
-    () => {
-
-        config.fonte =
-            Number(
-                fonteRange.value
-            );
-
-        conteudoMusica.style
-            .fontSize =
-
-            `${config.fonte}px`;
-
-        salvarConfig();
-    }
-);*/
-
-/* ==========================================
-   AUTO SCROLL
-========================================== */
-
 function atualizarScroll() {
 
     if (
@@ -530,20 +455,11 @@ scrollRange.addEventListener(
     }
 );
 
-/* ==========================================
-   INIT
-========================================== */
-
 carregarConfig();
 
 aplicarConfig();
 
 carregarSessaoAtual();
-
-const btnMobileMenu =
-    document.getElementById(
-        "btnMobileMenu"
-    );
 
 if (
     btnMobileMenu &&
@@ -564,45 +480,6 @@ if (
         }
     );
 }
-
-/* window.addEventListener(
-
-    "DOMContentLoaded",
-
-    () => {
-
-        const btnMobileMenu =
-            document.getElementById(
-                "btnMobileMenu"
-            );
-
-        const barraControles =
-            document.getElementById(
-                "barraControles"
-            );
-
-        if (
-            btnMobileMenu &&
-            barraControles
-        ) {
-
-            btnMobileMenu
-                .addEventListener(
-
-                    "click",
-
-                    () => {
-
-                        barraControles
-                            .classList
-                            .toggle(
-                                "mobile-aberto"
-                            );
-                    }
-                );
-        }
-    }
-); */
 
 window.addEventListener(
 
@@ -652,3 +529,38 @@ window.addEventListener(
             );
     }
 );
+
+btnToggleControles
+.addEventListener(
+
+    "click",
+
+    () => {
+
+        sidebar.classList.add(
+            "sidebar-oculta"
+        );
+
+        btnMobileMenu.style.display =
+            "flex";
+    }
+);
+
+btnMobileMenu
+.addEventListener(
+
+    "click",
+
+    () => {
+
+        sidebar.classList.remove(
+            "sidebar-oculta"
+        );
+
+        btnMobileMenu.style.display =
+            "none";
+    }
+);
+
+btnMobileMenu.style.display =
+    "none";

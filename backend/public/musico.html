@@ -19,72 +19,81 @@
 
 <body>
 
-<!-- CONTROLES -->
-
-<div
-    id="barraControles"
-    class="barra-controles">
-
-    <button id="btnTelaCheia">
-        ⛶ Tela Cheia
-    </button>
-
-    <button id="btnModoPalco">
-        🎤 Modo Palco
-    </button>
-
-    <button id="btnToggleControles">
-        ☰ Ocultar
-    </button>
-
-    <div class="controle">
-
-        <label>
-            Scroll
-        </label>
-
-        <input
-            type="range"
-            id="scrollRange"
-            min="0"
-            max="10"
-            value="0">
-
-    </div>
-
-</div>
-
 <button
     id="btnMobileMenu"
     class="btn-mobile-menu">
     ⚙
 </button>
 
-<!-- ÁREA PRINCIPAL -->
+<div class="painel-lider">
 
-<div class="musico-view">
+    <div
+        class="sidebar"
+        id="sidebarMusico">
 
-    <div class="info-musica">
+        <div class="card">
 
-        <div
-            id="nomeMusica"
-            class="nome-musica">
+            <h2>
+                Scroll
+            </h2>
 
-            Aguardando sessão...
-        </div>
+            <div class="controle">
 
-        <div
-            id="tomMusica"
-            class="tom-musica">
+                <label>
+                    Velocidade
+                </label>
 
-            -
+                <input
+                    type="range"
+                    id="scrollRange"
+                    min="0"
+                    max="10"
+                    value="0">
+
+            </div>
+
+            <br>
+
+            <button
+                id="btnToggleControles"
+                class="btn-primary">
+
+                ☰ Ocultar
+
+            </button>
+
         </div>
 
     </div>
 
-    <div
-        id="conteudoMusica"
-        class="cifra-container">
+    <div class="preview">
+
+        <div class="info-musica">
+
+            <div
+                id="nomeMusica"
+                class="nome-musica">
+
+                Aguardando sessão...
+
+            </div>
+
+            <div
+                id="tomMusica"
+                class="tom-musica">
+
+                -
+
+            </div>
+
+        </div>
+
+        <div
+            id="conteudoMusica"
+            class="cifra-container">
+
+        </div>
+
     </div>
 
 </div>
