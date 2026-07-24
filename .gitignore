@@ -136,3 +136,4 @@ dist
 .pnp.*
 *.json
 *.json
+/backend/data
