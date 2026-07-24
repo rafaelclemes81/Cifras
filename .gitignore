@@ -137,3 +137,6 @@ dist
 *.json
 *.json
 /backend/data
+/backend/data/repertorios
+/backend/data/repertorios
+/backend/data/sessoes
